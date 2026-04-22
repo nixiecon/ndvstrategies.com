@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDV Strategies LLC — Coming Soon</title>
+  <meta name="description" content="NDV Strategies LLC — Operations and automation consulting. Systems that work. Finally." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:  #4C1D95;
+      --purple-light: #A78BFA;
+      --teal:         #5EEAD4;
+      --bg:           #EDE9FE;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 3.5rem 4rem;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(76, 29, 149, 0.10);
+      border-top: 5px solid var(--purple-deep);
+    }
+
+    /* ── Logo area ───────────────────────────────────────────── */
+    .logo-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .logo-img {
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ── Divider ─────────────────────────────────────────────── */
+    .divider {
+      width: 3rem;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 99px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ── Headline ────────────────────────────────────────────── */
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--purple-deep);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #6B7280;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Email notify form ───────────────────────────────────── */
+    .notify-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .form-row input[type="email"] {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #111;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-row input[type="email"]:focus {
+      border-color: var(--purple-light);
+    }
+
+    .form-row button {
+      padding: 0.65rem 1.25rem;
+      background: var(--purple-deep);
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .form-row button:hover {
+      background: #3b1678;
+    }
+
+    .form-note {
+      font-size: 0.72rem;
+      color: #9CA3AF;
+      margin-top: 0.6rem;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #9CA3AF;
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 2.5rem 1.5rem; }
+      h1 { font-size: 1.6rem; }
+      .logo-img { max-width: 200px; }
+      .form-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="logo-wrap">
+      <img src="assets/ndv-logo.png" alt="NDV Strategies LLC" class="logo-img" />
+    </div>
+
+    <div class="divider"></div>
+
+    <h1>Coming Soon</h1>
+    <p class="tagline">Systems that work. Finally.<br>Something's being built here — check back soon.</p>
+
+    <span class="notify-label">Get notified when we launch</span>
+    <form class="form-row" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="form-note">No spam. Just a launch email.</p>
+
+    <div class="footer">
+      &copy; 2026 NDV Strategies LLC &nbsp;&middot;&nbsp; Gilbert, AZ
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '\u2713 You\'re on the list';
+      btn.style.background = '#059669';
+      e.target.querySelector('input').disabled = true;
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
