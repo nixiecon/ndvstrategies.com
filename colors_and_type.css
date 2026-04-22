@@ -1,0 +1,15 @@
+/* NDV Strategies — Design System Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Brand colors */
+  --purple-deep:  #4C1D95;
+  --purple-light: #A78BFA;
+  --teal:         #5EEAD4;
+  --bg-dark:      #0E0A1F;
+  --bg-light:     #EDE9FE;
+}
