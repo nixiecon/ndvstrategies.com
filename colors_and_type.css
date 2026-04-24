@@ -1,15 +1,36 @@
-/* NDV Strategies — Design System Tokens */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Brand colors */
+  /* Brand */
   --purple-deep:  #4C1D95;
   --purple-light: #A78BFA;
   --teal:         #5EEAD4;
   --bg-dark:      #0E0A1F;
   --bg-light:     #EDE9FE;
+
+  /* Tones (derived, used across surfaces) */
+  --ink-0:   #FFFFFF;
+  --ink-050: rgba(237,233,254,0.92);
+  --ink-100: rgba(237,233,254,0.78);
+  --ink-200: rgba(237,233,254,0.62);
+  --ink-300: rgba(237,233,254,0.45);
+  --ink-400: rgba(237,233,254,0.28);
+  --ink-500: rgba(237,233,254,0.15);
+  --ink-600: rgba(237,233,254,0.08);
+
+  --surface-hair: rgba(237,233,254,0.10);
+
+  /* Radii */
+  --r-sm: 8px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 140ms;
+  --base: 220ms;
 }
