@@ -5,7 +5,8 @@
 /* ── Fast Font (accessibility toggle) ───────────────────── */
 @font-face {
   font-family: 'FastFont';
-  src: url('../fonts/FastFontSans-Regular.otf') format('opentype');
+  src: url('../fonts/FastFont.woff2') format('woff2'),
+       url('../fonts/Fast_Sans.ttf') format('truetype');
   font-display: swap;
 }
 body.fast-font {
