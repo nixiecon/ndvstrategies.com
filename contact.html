@@ -119,8 +119,10 @@
   <div class="shell footer-inner">
     <span class="status"><span class="pulse"></span> © 2026 NDV Strategies LLC · Gilbert, AZ</span>
     <a href="mailto:contact@ndvstrategies.com" style="color:#6B5E8A; border-bottom:1px solid rgba(76,29,149,0.10);">contact@ndvstrategies.com</a>
+
   </div>
 </footer>
+<script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
 
 <style>
   .contact-grid {
@@ -274,5 +276,6 @@
   });
 </script>
 
+<button class="font-toggle" onclick="document.body.classList.toggle('fast-font'); localStorage.setItem('fastfont', document.body.classList.contains('fast-font'))" title="Toggle reading font">Aa</button>
 </body>
 </html>

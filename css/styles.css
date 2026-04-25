@@ -2,6 +2,22 @@
    NDV Strategies — shared site styles (LIGHT MODE)
    ───────────────────────────────────────────────────────── */
 
+/* ── Fast Font (accessibility toggle) ───────────────────── */
+@font-face {
+  font-family: 'FastFont';
+  src: url('../fonts/FastFontSans-Regular.otf') format('opentype');
+  font-display: swap;
+}
+body.fast-font {
+  font-family: 'FastFont', system-ui, sans-serif;
+  font-feature-settings: "calt" 1;
+}
+body.fast-font h1, body.fast-font h2, body.fast-font h3, body.fast-font h4,
+body.fast-font p, body.fast-font li, body.fast-font a, body.fast-font span,
+body.fast-font label, body.fast-font input, body.fast-font textarea, body.fast-font button {
+  font-family: 'FastFont', system-ui, sans-serif;
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -303,6 +319,38 @@ a:hover { color: #3E1777; }
   border-radius: 999px;
   border: 1.5px solid var(--teal);
   background: #fff;
+}
+
+/* ── Accessibility font toggle (floating) ───────────── */
+.font-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(76,29,149,0.18);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  color: #6B5E8A;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 99;
+  transition: all var(--fast) var(--ease);
+  padding: 0;
+  line-height: 1;
+}
+.font-toggle:hover {
+  border-color: var(--purple-deep);
+  color: var(--purple-deep);
+  transform: scale(1.08);
+}
+body.fast-font .font-toggle {
+  background: var(--purple-deep);
+  color: #fff;
+  border-color: var(--purple-deep);
 }
 
 /* ── Footer ──────────────────────────────────────────── */
