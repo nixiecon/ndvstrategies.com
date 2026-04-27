@@ -80,8 +80,9 @@
     <div class="eyebrow"><span class="node"></span> In development</div>
     <h1>Systems that work. <span class="fin">Finally.</span></h1>
     <p class="sub">We build the dashboards, reports, and automations that nonprofits and public agencies actually use. The full site is on the way. Drop your email if you want a note when it's live.</p>
-    <form class="form" onsubmit="handleSubmit(event)">
-      <input type="email" placeholder="you@organization.org" required>
+    <form class="form" id="notify-form">
+      <input type="email" name="email" placeholder="you@organization.org" required>
+      <input type="hidden" name="_subject" value="New notify-me signup from ndvstrategies.com">
       <button type="submit">Notify me &rarr;</button>
     </form>
     <div class="meta">
@@ -96,13 +97,33 @@
 </div>
 
 <script>
-function handleSubmit(e) {
+document.getElementById('notify-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Thanks \u2014 we\u2019ll be in touch';
-  e.target.querySelector('input').disabled = true;
+  const form = e.target;
+  const btn = form.querySelector('button');
+  const input = form.querySelector('input[type="email"]');
   btn.disabled = true;
-}
+  btn.textContent = 'Sending\u2026';
+  try {
+    const res = await fetch('https://formspree.io/f/xqewvkle', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      btn.textContent = 'Thanks \u2014 we\u2019ll be in touch';
+      input.disabled = true;
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = 'Notify me &rarr;';
+      alert('Something went wrong. Please try again or email contact@ndvstrategies.com.');
+    }
+  } catch {
+    btn.disabled = false;
+    btn.innerHTML = 'Notify me &rarr;';
+    alert('Something went wrong. Please try again or email contact@ndvstrategies.com.');
+  }
+});
 </script>
 </body>
 </html>
