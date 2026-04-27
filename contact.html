@@ -67,7 +67,7 @@
     <div class="shell contact-grid">
 
       <!-- Form -->
-      <form class="contact-form" id="inquiry-form" novalidate>
+      <form class="contact-form" id="inquiry-form" action="https://formspree.io/f/xqewvkle" method="POST" novalidate>
         <div class="form-head">
           <span class="mono-label">Inquiry form</span>
           <h2 style="font-size:clamp(24px,2.4vw,32px); margin-top:10px;">Send a note.</h2>
@@ -263,16 +263,35 @@
   });
   links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-  // Form — visual submit only (no backend wired up yet)
+  // Form — submit to Formspree
   const form = document.getElementById('inquiry-form');
   const success = document.getElementById('form-success');
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    // Hide the form fields, show success
-    form.querySelectorAll('.field, .form-head, .form-foot').forEach(el => el.style.display = 'none');
-    success.hidden = false;
-    success.scrollIntoView && success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.querySelectorAll('.field, .form-head, .form-foot').forEach(el => el.style.display = 'none');
+        success.hidden = false;
+        success.scrollIntoView && success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = 'Send inquiry <span class="arrow">\u2192</span>';
+        alert('Something went wrong. Please try again or email contact@ndvstrategies.com directly.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = 'Send inquiry <span class="arrow">\u2192</span>';
+      alert('Something went wrong. Please try again or email contact@ndvstrategies.com directly.');
+    }
   });
 </script>
 
