@@ -155,7 +155,7 @@ a:hover { color: #3E1777; }
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 18px 0;
+  padding: 14px 0;
   background: rgba(255,255,255,0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -165,7 +165,7 @@ a:hover { color: #3E1777; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-brand img { height: 40px; width: auto; }
+.nav-brand img { height: 56px; width: auto; }
 
 .nav-links {
   display: flex;
