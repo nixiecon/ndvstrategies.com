@@ -2,128 +2,278 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NS33HYLJK"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9NS33HYLJK');</script>
-<title>NDV Strategies — Coming Soon</title>
-<meta name="description" content="NDV Strategies LLC — Operations and automation consulting for nonprofits and public agencies. Systems that work. Finally.">
+<title>NDV Strategies — Systems that work. Finally.</title>
+<meta name="description" content="Operations and automation consulting that buys back your time. Dashboards, reports, and workflows for organizations that need systems that actually run.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="colors_and_type.css">
-<style>
-  html, body { margin: 0; padding: 0; height: 100%; font-family: var(--font-sans); background: #0E0A1F; color: #EDE9FE; -webkit-font-smoothing: antialiased; overflow: hidden; }
-  * { box-sizing: border-box; }
-  .wrap { position: relative; height: 100vh; display: flex; flex-direction: column; padding: 40px 56px; background: radial-gradient(1200px 700px at 20% 30%, rgba(76,29,149,0.55), transparent 60%), radial-gradient(900px 600px at 85% 80%, rgba(115,44,130,0.40), transparent 60%), #0E0A1F; }
-  .circuit { position: absolute; inset: 0; opacity: 0.22; pointer-events: none; }
-  .top { display: flex; align-items: center; gap: 14px; position: relative; }
-  .logo { height: 64px; width: auto; display: block; filter: drop-shadow(0 2px 16px rgba(94,234,212,0.08)); }
-  .center { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 860px; position: relative; z-index: 1; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(167,139,250,0.10); border: 1px solid rgba(167,139,250,0.35); border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #A78BFA; text-transform: uppercase; width: fit-content; }
-  .node { width: 8px; height: 8px; border-radius: 999px; background: #A78BFA; box-shadow: 0 0 0 4px rgba(167,139,250,0.20); }
-  h1 { font-size: 88px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.0; margin: 28px 0 24px; text-wrap: balance; color: #fff; }
-  h1 .fin { color: #A78BFA; }
-  .sub { font-size: 20px; line-height: 1.55; color: rgba(237,233,254,0.78); max-width: 620px; text-wrap: pretty; margin-bottom: 36px; }
-  .form { display: flex; gap: 10px; max-width: 520px; }
-  .form input { flex: 1; padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(237,233,254,0.18); background: rgba(255,255,255,0.04); color: #fff; font-family: inherit; font-size: 15px; outline: none; transition: all 140ms; }
-  .form input::placeholder { color: rgba(237,233,254,0.45); }
-  .form input:focus { border-color: #A78BFA; box-shadow: 0 0 0 4px rgba(167,139,250,0.2); }
-  .form button { padding: 14px 22px; border-radius: 10px; border: none; background: #A78BFA; color: #210749; font-weight: 700; font-size: 15px; font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 140ms; }
-  .form button:hover { background: #c4b5fd; transform: translateY(-1px); }
-  .meta { display: flex; gap: 32px; margin-top: 28px; font-size: 13px; color: rgba(237,233,254,0.55); }
-  .meta a { color: rgba(237,233,254,0.8); text-decoration: none; border-bottom: 1px solid rgba(237,233,254,0.2); }
-  .meta a:hover { color: #A78BFA; border-color: #A78BFA; }
-  .bottom { position: relative; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(237,233,254,0.45); font-family: var(--font-mono); letter-spacing: 0.04em; }
-  .status { display: inline-flex; align-items: center; gap: 8px; }
-  .pulse { width: 8px; height: 8px; border-radius: 999px; background: #A78BFA; animation: pulse 2s cubic-bezier(0.22,1,0.36,1) infinite; }
-  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(167,139,250,0.6); } 50% { box-shadow: 0 0 0 10px rgba(167,139,250,0); } }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .wrap { padding: 24px 24px; }
-    h1 { font-size: 44px; }
-    .sub { font-size: 16px; }
-    .form { flex-direction: column; }
-    .meta { flex-direction: column; gap: 8px; }
-    .bottom { flex-direction: column; gap: 8px; text-align: center; }
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    h1 { font-size: 64px; }
-  }
-</style>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="wrap">
-  <svg class="circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-    <g fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M -50 200 L 260 200 L 300 160 L 600 160 L 640 200 L 980 200"/>
-      <path d="M 980 200 L 1020 240 L 1260 240 L 1300 200 L 1500 200"/>
-      <path d="M 640 200 L 680 280 L 980 280"/>
-      <path d="M -50 620 L 220 620 L 260 580 L 560 580 L 600 620 L 1500 620"/>
-      <path d="M 380 520 L 380 440 L 560 440"/>
-      <path d="M 1080 460 L 1080 380 L 1260 380"/>
-    </g>
-    <g fill="#0E0A1F" stroke="#5EEAD4" stroke-width="2">
-      <circle cx="260" cy="200" r="5"/><circle cx="600" cy="160" r="5"/>
-      <circle cx="980" cy="200" r="5"/><circle cx="1260" cy="240" r="5"/>
-      <circle cx="220" cy="620" r="5"/><circle cx="560" cy="580" r="5"/>
-      <circle cx="980" cy="280" r="5"/><circle cx="380" cy="440" r="5"/>
-      <circle cx="1080" cy="380" r="5"/>
-    </g>
-  </svg>
 
-  <div class="top">
-    <img class="logo" src="assets/logo-white.png" alt="NDV Strategies">
+<!-- Circuit background (fixed, subtle) -->
+<svg class="circuit-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M -50 200 L 260 200 L 300 160 L 600 160 L 640 200 L 980 200"/>
+    <path d="M 980 200 L 1020 240 L 1260 240 L 1300 200 L 1500 200"/>
+    <path d="M 640 200 L 680 280 L 980 280"/>
+    <path d="M -50 620 L 220 620 L 260 580 L 560 580 L 600 620 L 1500 620"/>
+    <path d="M 380 520 L 380 440 L 560 440"/>
+    <path d="M 1080 460 L 1080 380 L 1260 380"/>
+    <path d="M 820 720 L 820 800 L 1100 800"/>
+    <path d="M 140 320 L 140 400 L 260 400"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#4C1D95" stroke-width="2">
+    <circle cx="260" cy="200" r="5"/><circle cx="600" cy="160" r="5"/>
+    <circle cx="980" cy="200" r="5"/><circle cx="1260" cy="240" r="5"/>
+    <circle cx="220" cy="620" r="5"/><circle cx="560" cy="580" r="5"/>
+    <circle cx="980" cy="280" r="5"/><circle cx="380" cy="440" r="5"/>
+    <circle cx="1080" cy="380" r="5"/><circle cx="820" cy="800" r="5"/>
+    <circle cx="140" cy="400" r="5"/>
+  </g>
+</svg>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="home.html" aria-label="NDV Strategies — home">
+      <img src="assets/logo-primary.png" alt="NDV Strategies">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
+</nav>
 
-  <div class="center">
-    <div class="eyebrow"><span class="node"></span> In development</div>
-    <h1>Systems that work. <span class="fin">Finally.</span></h1>
-    <p class="sub">We build the dashboards, reports, and automations that nonprofits and public agencies actually use. The full site is on the way. Drop your email if you want a note when it's live.</p>
-    <form class="form" id="notify-form">
-      <input type="email" name="email" placeholder="you@organization.org" required>
-      <input type="hidden" name="_subject" value="New notify-me signup from ndvstrategies.com">
-      <button type="submit">Notify me &rarr;</button>
-    </form>
-    <div class="meta">
-      <a href="mailto:contact@ndvstrategies.com">contact@ndvstrategies.com</a>
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="shell">
+      <span class="eyebrow"><span class="node"></span> Operations &amp; automation consulting</span>
+      <h1>Systems that work.<br><span class="fin">Finally.</span></h1>
+      <p class="sub">Operations and automation consulting that buys back your time. Still downloading CSVs from your bank and manually uploading them to your accounting software? That's the kind of thing I fix.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="contact.html">Let's talk <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="services.html">See what we do</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="bottom">
-    <span class="status"><span class="pulse"></span> STATUS &middot; BUILDING</span>
-    <span>&copy; 2026 NDV STRATEGIES LLC &middot; GILBERT, AZ</span>
+  <!-- Three pillars -->
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow"><span class="node"></span> What we do</span>
+        <h2 style="margin-top:20px">Three disciplines. One throughline: things that run without you.</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="mono-label">01 · Operations</span>
+          <h3>Operations &amp; Process Design</h3>
+          <p>Untangling broken workflows, documenting the SOPs nobody wrote down, and rebuilding the parts that keep seizing up.</p>
+          <ul>
+            <li>Workflow &amp; process design</li>
+            <li>SOP documentation</li>
+            <li>Operational audits</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="mono-label">02 · Automation</span>
+          <h3>Automation &amp; Integrations</h3>
+          <p>Connecting the tools you already pay for. Killing the manual weekly work. Building the dashboards and reports that show what's actually happening.</p>
+          <ul>
+            <li>Zapier, Power Automate, APIs</li>
+            <li>Dashboards &amp; report automation</li>
+            <li>Data pipelines</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="mono-label">03 · Analytics</span>
+          <h3>Bookkeeping &amp; Data Analytics</h3>
+          <p>Clean books. Clear reports. Decisions backed by data you can actually trust.</p>
+          <ul>
+            <li>Monthly reconciliations</li>
+            <li>Financial reporting &amp; forecasting</li>
+            <li>Data visualization</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why NDV -->
+  <section class="section">
+    <div class="shell">
+      <div class="trust">
+        <div class="trust-lede">
+          <span class="eyebrow"><span class="node"></span> Why NDV</span>
+          <h2 style="margin-top:20px">Senior operations work, without the agency overhead.</h2>
+          <p>Most consultancies bill you for the layers between you and the person doing the work. You don't get those layers here. You describe the problem. I handle the rest.</p>
+        </div>
+        <ul class="trust-points">
+          <li>
+            <span class="mono-label">10+ yrs</span>
+            <p>Operations management across corporate, government contracting, and mission-driven organizations.</p>
+          </li>
+          <li>
+            <span class="mono-label">Credentials</span>
+            <p>MBA. BS Computer Science. Six Sigma. Department of Defense Secret Clearance.</p>
+          </li>
+          <li>
+            <span class="mono-label">Referral-led</span>
+            <p>The work comes by word of mouth. That keeps the bar high on both sides.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof placeholder -->
+  <section class="section">
+    <div class="shell">
+      <div class="section-head" style="margin-bottom:32px">
+        <span class="eyebrow"><span class="node"></span> Proof</span>
+        <h2 style="margin-top:20px">What clients say.</h2>
+      </div>
+      <div class="testimonial-placeholder">
+        <div class="tp-mark">&#8220;</div>
+        <p class="tp-copy">Last season we had 800+ edits across three rounds. This season it was 222 &mdash; 200 first round, 20 second round, 2 last round. That&#39;s a quarter of what we used to go through. We had our joint team meeting and everyone was happy and cheerful instead of the usual crabby and defensive. It&#39;s crazy the difference of how much easier this was after Nicole fixed the Excel sheet.</p>
+        <div class="tp-foot">
+          <span class="mono">Glenda Ollero &middot; Communications Manager, UNA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="shell">
+      <div class="cta-band">
+        <span class="eyebrow"><span class="node"></span> Start here</span>
+        <h2 style="margin-top:20px">Tell me what's eating your week.</h2>
+        <p>If you've been meaning to fix the spreadsheet, the handoff, the weekly report that nobody reads — that's the conversation.</p>
+        <a class="btn" href="contact.html">Let's talk <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <span class="status"><span class="pulse"></span> © 2026 NDV Strategies LLC · Gilbert, AZ</span>
+    <a href="mailto:contact@ndvstrategies.com" style="color:#6B5E8A; border-bottom:1px solid rgba(76,29,149,0.10);">contact@ndvstrategies.com</a>
+
   </div>
-</div>
+</footer>
+<script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
+
+<!-- Page-specific extras -->
+<style>
+  /* Trust / Why NDV layout */
+  .trust {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 1023px) { .trust { grid-template-columns: 1fr; gap: 40px; } }
+
+  .trust-lede p { margin-top: 16px; font-size: 17px; max-width: 460px; }
+
+  .trust-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
+  .trust-points li {
+    padding: 22px 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(76,29,149,0.10);
+    border-radius: var(--r-lg);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .trust-points .mono-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-top: 3px;
+  }
+  .trust-points p { font-size: 15px; color: #1E1B4B; }
+  @media (max-width: 640px) {
+    .trust-points li { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* Testimonial placeholder */
+  .testimonial-placeholder {
+    padding: 48px;
+    background: #FAF8FF;
+    border: 1px dashed rgba(76,29,149,0.22);
+    border-radius: var(--r-xl);
+    position: relative;
+  }
+  @media (max-width: 767px) { .testimonial-placeholder { padding: 32px 24px; } }
+  .tp-mark {
+    font-family: Georgia, serif;
+    font-size: 100px;
+    line-height: 0.7;
+    color: rgba(76,29,149,0.35);
+    margin-bottom: 8px;
+  }
+  .tp-copy {
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.35;
+    color: #1E1B4B;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .tp-note { font-size: 15px; color: #6B5E8A; max-width: 560px; }
+  .tp-foot {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(76,29,149,0.10);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+</style>
 
 <script>
-document.getElementById('notify-form')?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button');
-  const input = form.querySelector('input[type="email"]');
-  btn.disabled = true;
-  btn.textContent = 'Sending\u2026';
-  try {
-    const res = await fetch('https://formspree.io/f/xqewvkle', {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      btn.textContent = 'Thanks \u2014 we\u2019ll be in touch';
-      input.disabled = true;
-    } else {
-      btn.disabled = false;
-      btn.innerHTML = 'Notify me &rarr;';
-      alert('Something went wrong. Please try again or email contact@ndvstrategies.com.');
-    }
-  } catch {
-    btn.disabled = false;
-    btn.innerHTML = 'Notify me &rarr;';
-    alert('Something went wrong. Please try again or email contact@ndvstrategies.com.');
-  }
-});
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  // Close on link click
+  links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
+
+<button class="font-toggle" onclick="document.body.classList.toggle('fast-font'); localStorage.setItem('fastfont', document.body.classList.contains('fast-font'))" title="Toggle reading font">Aa</button>
 </body>
 </html>
