@@ -25,8 +25,9 @@
   .chip { height: 96px; display: flex; align-items: flex-end; padding: 10px; }
   .swatch .meta { padding: 12px 14px; }
   .swatch .name { font-size: 14px; font-weight: 600; color: #fff; }
-  .swatch .hex { font-family: var(--font-mono); font-size: 13px; color: rgba(237,233,254,0.7); margin-top: 3px; cursor: pointer; }
-  .swatch .hex:hover { color: #A78BFA; }
+  .swatch .hex { display: inline-block; font-family: var(--font-mono); font-size: 13px; color: rgba(237,233,254,0.7); margin-top: 3px; cursor: copy; border-bottom: 1px dashed rgba(237,233,254,0.30); transition: color 140ms, border-color 140ms; }
+  .swatch .hex:hover { color: #A78BFA; border-color: #A78BFA; }
+  .swatch .hex.copied { color: #5EEAD4; border-color: transparent; }
   .swatch .var { font-family: var(--font-mono); font-size: 11px; color: rgba(237,233,254,0.40); margin-top: 2px; }
   .copytag { font-size: 10px; color: #5EEAD4; margin-left: 6px; opacity: 0; transition: opacity 140ms; }
   .hex.copied .copytag { opacity: 1; }
@@ -105,7 +106,7 @@ document.getElementById('palette').innerHTML = PALETTE.map(c => `
     <div class="chip" style="background:${c.hex}"></div>
     <div class="meta">
       <div class="name">${c.name}</div>
-      <div class="hex" data-hex="${c.hex}">${c.hex}<span class="copytag">copied</span></div>
+      <div class="hex" data-hex="${c.hex}" title="Click to copy">${c.hex}<span class="copytag">&#10003; copied</span></div>
       <div class="var">${c.var}</div>
     </div>
   </div>`).join('');
@@ -121,12 +122,31 @@ const VOICE = [
 document.getElementById('voice').innerHTML = VOICE.map(v => `
   <div class="vcard"><div class="we">${v.we}</div><div class="not">${v.not}</div></div>`).join('');
 
+function flash(el) {
+  el.classList.add('copied');
+  setTimeout(() => el.classList.remove('copied'), 1200);
+}
+function copyText(text, el) {
+  // navigator.clipboard only works over HTTPS / localhost; fall back otherwise.
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => flash(el)).catch(() => legacyCopy(text, el));
+  } else {
+    legacyCopy(text, el);
+  }
+}
+function legacyCopy(text, el) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '-9999px';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+  flash(el);
+}
 document.querySelectorAll('.hex').forEach(el => {
-  el.addEventListener('click', () => {
-    navigator.clipboard?.writeText(el.dataset.hex);
-    el.classList.add('copied');
-    setTimeout(() => el.classList.remove('copied'), 1200);
-  });
+  el.addEventListener('click', () => copyText(el.dataset.hex, el));
 });
 </script>
 </body>
