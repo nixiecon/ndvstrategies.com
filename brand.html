@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NDV Strategies — Brand Guide</title>
+<meta name="description" content="NDV Strategies LLC brand guide — colors, type, voice.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; font-family: var(--font-sans); background: #0E0A1F; color: #EDE9FE; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  body { background: radial-gradient(1200px 700px at 20% 0%, rgba(76,29,149,0.45), transparent 60%), radial-gradient(900px 600px at 90% 30%, rgba(115,44,130,0.30), transparent 60%), #0E0A1F; min-height: 100vh; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 56px 32px 96px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(167,139,250,0.10); border: 1px solid rgba(167,139,250,0.35); border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #A78BFA; text-transform: uppercase; }
+  .node { width: 8px; height: 8px; border-radius: 999px; background: #A78BFA; box-shadow: 0 0 0 4px rgba(167,139,250,0.20); }
+  h1 { font-size: 56px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; margin: 24px 0 8px; color: #fff; }
+  h1 .fin { color: #A78BFA; }
+  .lede { font-size: 18px; color: rgba(237,233,254,0.72); max-width: 620px; line-height: 1.55; margin-bottom: 8px; }
+  h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #5EEAD4; margin: 56px 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+  .swatch { border: 1px solid rgba(237,233,254,0.12); border-radius: var(--r-md); overflow: hidden; background: rgba(255,255,255,0.02); }
+  .chip { height: 96px; display: flex; align-items: flex-end; padding: 10px; }
+  .swatch .meta { padding: 12px 14px; }
+  .swatch .name { font-size: 14px; font-weight: 600; color: #fff; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 13px; color: rgba(237,233,254,0.7); margin-top: 3px; cursor: pointer; }
+  .swatch .hex:hover { color: #A78BFA; }
+  .swatch .var { font-family: var(--font-mono); font-size: 11px; color: rgba(237,233,254,0.40); margin-top: 2px; }
+  .copytag { font-size: 10px; color: #5EEAD4; margin-left: 6px; opacity: 0; transition: opacity 140ms; }
+  .hex.copied .copytag { opacity: 1; }
+  .type-row { border: 1px solid rgba(237,233,254,0.12); border-radius: var(--r-md); padding: 22px 24px; margin-bottom: 12px; background: rgba(255,255,255,0.02); }
+  .type-row .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(237,233,254,0.5); text-transform: uppercase; margin-bottom: 12px; }
+  .sans-sample { font-family: var(--font-sans); }
+  .mono-sample { font-family: var(--font-mono); }
+  .big { font-size: 30px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+  .voice { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .vcard { border: 1px solid rgba(237,233,254,0.12); border-radius: var(--r-md); padding: 18px 20px; background: rgba(255,255,255,0.02); }
+  .vcard .we { font-weight: 700; color: #A78BFA; font-size: 15px; }
+  .vcard .not { font-size: 13px; color: rgba(237,233,254,0.55); margin-top: 6px; }
+  .vcard .not b { color: rgba(237,233,254,0.8); font-weight: 600; }
+  .quote { border-left: 3px solid #A78BFA; padding: 6px 0 6px 18px; margin: 14px 0; font-size: 17px; color: rgba(237,233,254,0.85); line-height: 1.5; }
+  .tagline-box { border: 1px solid rgba(94,234,212,0.35); border-radius: var(--r-lg); padding: 28px; text-align: center; background: rgba(94,234,212,0.05); }
+  .tagline-box .t { font-size: 30px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+  .tagline-box .t .fin { color: #5EEAD4; }
+  .note { font-size: 13px; color: rgba(237,233,254,0.5); margin-top: 10px; line-height: 1.6; }
+  .source { font-family: var(--font-mono); font-size: 11px; color: rgba(237,233,254,0.35); margin-top: 6px; }
+  a.back { display: inline-flex; align-items: center; gap: 6px; color: rgba(237,233,254,0.6); text-decoration: none; font-size: 13px; font-family: var(--font-mono); margin-top: 48px; }
+  a.back:hover { color: #A78BFA; }
+  footer { font-family: var(--font-mono); font-size: 11px; color: rgba(237,233,254,0.4); letter-spacing: 0.06em; margin-top: 16px; }
+  @media (max-width: 600px) { h1 { font-size: 40px; } .wrap { padding: 40px 20px 72px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow"><span class="node"></span> Brand Guide &middot; Internal Reference</div>
+  <h1>Systems that work. <span class="fin">Finally.</span></h1>
+  <p class="lede">The working brand reference for NDV Strategies LLC. Colors and type below are the live values from <code>colors_and_type.css</code> — the source of truth for the site. Click any hex to copy.</p>
+
+  <h2>Colors</h2>
+  <div class="grid" id="palette"></div>
+
+  <h2>Typography</h2>
+  <div class="type-row">
+    <div class="label">Body / Headlines — Inter</div>
+    <div class="sans-sample big">The quick brown fox builds the dashboard.</div>
+    <div class="sans-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">Inter · 400 / 500 / 600 / 700 — abcdefghijklmnopqrstuvwxyz 0123456789</div>
+  </div>
+  <div class="type-row">
+    <div class="label">Code / Metadata — JetBrains Mono</div>
+    <div class="mono-sample big">git commit -m "ship it"</div>
+    <div class="mono-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">JetBrains Mono · 400 / 500 — 0123456789 {}[]()&lt;&gt;</div>
+  </div>
+
+  <h2>Tagline</h2>
+  <div class="tagline-box">
+    <div class="t">Systems that work. <span class="fin">Finally.</span></div>
+    <div class="note">Chosen 2026-04-16. Use as the primary line; "Finally." always carries the accent color.</div>
+  </div>
+
+  <h2>Voice — We Are / We Are Not</h2>
+  <div class="voice" id="voice"></div>
+
+  <h2>How it sounds</h2>
+  <div class="quote">"You're doing five jobs. Let's fix that."</div>
+  <div class="quote">"You describe the problem. I handle the rest."</div>
+  <div class="note">Direct. Leads with the client's pain, not credentials. No jargon, no "synergy," no fake cheerfulness. Never use "VA," "guru," "ninja," or "wizard."</div>
+  <div class="source">Source: Projects/Updates/NDV_Brand_Voice_Guidelines.md</div>
+
+  <a class="back" href="/">&larr; ndvstrategies.com</a>
+  <footer>&copy; 2026 NDV STRATEGIES LLC &middot; GILBERT, AZ</footer>
+</div>
+
+<script>
+const PALETTE = [
+  { name: 'Purple deep',  hex: '#4C1D95', var: '--purple-deep',  fg: '#EDE9FE' },
+  { name: 'Purple light', hex: '#A78BFA', var: '--purple-light', fg: '#210749' },
+  { name: 'Teal',         hex: '#5EEAD4', var: '--teal',         fg: '#0E0A1F' },
+  { name: 'BG dark',      hex: '#0E0A1F', var: '--bg-dark',      fg: '#EDE9FE' },
+  { name: 'BG light',     hex: '#EDE9FE', var: '--bg-light',     fg: '#4C1D95' },
+];
+document.getElementById('palette').innerHTML = PALETTE.map(c => `
+  <div class="swatch">
+    <div class="chip" style="background:${c.hex}"></div>
+    <div class="meta">
+      <div class="name">${c.name}</div>
+      <div class="hex" data-hex="${c.hex}">${c.hex}<span class="copytag">copied</span></div>
+      <div class="var">${c.var}</div>
+    </div>
+  </div>`).join('');
+
+const VOICE = [
+  { we: 'Precise', not: 'not <b>vague</b> — complete, correct, no follow-up needed' },
+  { we: 'Anticipatory', not: 'not <b>reactive</b> — see the need before it’s finished being said' },
+  { we: 'Legible', not: 'not <b>performatively warm</b> — clear and real, never fake-cheerful' },
+  { we: 'Authoritative', not: 'not <b>credential-dropping</b> — lead with results, not titles' },
+  { we: 'Premium', not: 'not <b>commodity</b> — referral-first, not an Upwork listing' },
+  { we: 'Direct', not: 'not <b>jargon-heavy</b> — say the thing, no buzzword soup' },
+];
+document.getElementById('voice').innerHTML = VOICE.map(v => `
+  <div class="vcard"><div class="we">${v.we}</div><div class="not">${v.not}</div></div>`).join('');
+
+document.querySelectorAll('.hex').forEach(el => {
+  el.addEventListener('click', () => {
+    navigator.clipboard?.writeText(el.dataset.hex);
+    el.classList.add('copied');
+    setTimeout(() => el.classList.remove('copied'), 1200);
+  });
+});
+</script>
+</body>
+</html>
