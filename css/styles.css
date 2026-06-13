@@ -94,12 +94,12 @@ a:hover { color: #3E1777; }
   background: rgba(76,29,149,0.08);
   border: 1px solid rgba(76,29,149,0.22);
   border-radius: 999px;
-  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--purple-deep);
   text-transform: uppercase;
   font-family: var(--font-mono);
+  font-size: 13px;
 }
 
 .eyebrow .node {
@@ -165,7 +165,7 @@ a:hover { color: #3E1777; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-brand img { height: 56px; width: auto; }
+.nav-brand img { height: 72px; width: auto; }
 
 .nav-links {
   display: flex;
@@ -180,7 +180,9 @@ a:hover { color: #3E1777; }
   display: inline-block;
   padding: 8px 14px;
   border-radius: var(--r-md);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.01em;
   font-weight: 500;
   color: #4A4462;
   transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
@@ -440,3 +442,99 @@ body.fast-font .font-toggle {
 .stack-lg > * + * { margin-top: 32px; }
 .stack-md > * + * { margin-top: 20px; }
 .stack-sm > * + * { margin-top: 12px; }
+
+/* ── Expandable service cards (homepage "What we do") ─── */
+/* Closed cards are compact and all the same size. Opening one
+   expands it (and only it) to a fixed height; opening another
+   collapses the first, so every expanded card is the same size. */
+.grid-3--expandable { align-items: start; }
+
+.card--expandable {
+  padding: 0;
+  overflow: hidden;
+  /* Purple-tinted dark, matching the coming-soon page */
+  background:
+    radial-gradient(130% 110% at 18% 0%, rgba(76,29,149,0.55), transparent 56%),
+    radial-gradient(120% 120% at 100% 100%, rgba(115,44,130,0.42), transparent 55%),
+    #0E0A1F;
+  border: 1px solid rgba(167,139,250,0.22);
+  box-shadow: 0 12px 40px -24px rgba(14,10,31,0.9);
+}
+.card--expandable:hover {
+  border-color: rgba(167,139,250,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 54px -26px rgba(94,234,212,0.20);
+}
+
+/* Header / clickable button. Label stays left; only the title is centered. */
+.card-head { margin: 0; font-size: inherit; font-weight: inherit; }
+.card-toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 26px 26px 24px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.card--expandable .mono-label {
+  color: var(--purple-light);
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+/* Title is centered; forced 2-line break (first word + "&" / rest)
+   keeps every card's title shape identical. */
+.card-toggle .card-name {
+  display: block;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink-0);
+}
+
+/* Chevron affordance — top-right corner, rotates up when open. */
+.card-chevron-wrap {
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  margin: 0;
+  line-height: 0;
+}
+.card-chevron {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--teal);
+  border-bottom: 2px solid var(--teal);
+  transform: rotate(45deg);                                  /* points down */
+  transition: transform var(--fast, 220ms) var(--ease, ease);
+}
+.card--expandable.open .card-chevron { transform: rotate(225deg); }  /* points up */
+
+/* Detail region: collapses to 0 when closed; opens to a FIXED
+   height so every expanded card is the same size. */
+.card-details {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height var(--fast, 260ms) var(--ease, ease),
+              opacity var(--fast, 260ms) var(--ease, ease);
+}
+.card--expandable.open .card-details { height: 256px; opacity: 1; }
+.card-details-inner { padding: 2px 26px 28px; text-align: left; }
+.card-details-inner p { font-size: 16px; line-height: 1.5; color: var(--ink-100); margin-top: 0; }
+.card--expandable .card-details-inner ul { margin-top: 16px; }
+.card--expandable .card-details-inner ul li { font-size: 16px; color: var(--ink-100); }
+/* Solid teal bullet dots */
+.card--expandable .card-details-inner ul li::before {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-details, .card-chevron { transition: none; }
+}

@@ -41,7 +41,7 @@
 <nav class="site-nav">
   <div class="shell nav-inner">
     <a class="nav-brand" href="index.html" aria-label="NDV Strategies — home">
-      <img src="assets/ndv-strategies-logo-primary.svg" alt="NDV Strategies">
+      <img src="assets/ndv-strategies-logo-primary-transparent.svg" alt="NDV Strategies">
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -79,38 +79,65 @@
         <h2 style="margin-top:20px">Three disciplines. One throughline: things that run without you.</h2>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <span class="mono-label">01 · Operations</span>
-          <h3>Operations &amp; Process Design</h3>
-          <p>Untangling broken workflows, documenting the SOPs nobody wrote down, and rebuilding the parts that keep seizing up.</p>
-          <ul>
-            <li>Workflow &amp; process design</li>
-            <li>SOP documentation</li>
-            <li>Operational audits</li>
-          </ul>
+      <div class="grid-3 grid-3--expandable">
+        <article class="card card--expandable">
+          <h3 class="card-head">
+            <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="mono-label">01 · Operations</span>
+              <span class="card-name">Operations &amp;<br>Process Design</span>
+              <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+          <div class="card-details">
+            <div class="card-details-inner">
+              <p>Untangling broken workflows, documenting the SOPs nobody wrote down, and rebuilding the parts that keep seizing up.</p>
+              <ul>
+                <li>Workflow &amp; process design</li>
+                <li>SOP documentation</li>
+                <li>Operational audits</li>
+              </ul>
+            </div>
+          </div>
         </article>
 
-        <article class="card">
-          <span class="mono-label">02 · Automation</span>
-          <h3>Automation &amp; Integrations</h3>
-          <p>Connecting the tools you already pay for. Killing the manual weekly work. Building the dashboards and reports that show what's actually happening.</p>
-          <ul>
-            <li>Zapier, Power Automate, APIs</li>
-            <li>Dashboards &amp; report automation</li>
-            <li>Data pipelines</li>
-          </ul>
+        <article class="card card--expandable">
+          <h3 class="card-head">
+            <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="mono-label">02 · Automation</span>
+              <span class="card-name">Automation &amp;<br>Integrations</span>
+              <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+          <div class="card-details">
+            <div class="card-details-inner">
+              <p>Connecting the tools you already pay for. Killing the manual weekly work. Building the dashboards and reports that show what's actually happening.</p>
+              <ul>
+                <li>Zapier, Power Automate, APIs</li>
+                <li>Dashboards &amp; report automation</li>
+                <li>Data pipelines</li>
+              </ul>
+            </div>
+          </div>
         </article>
 
-        <article class="card">
-          <span class="mono-label">03 · Analytics</span>
-          <h3>Bookkeeping &amp; Data Analytics</h3>
-          <p>Clean books. Clear reports. Decisions backed by data you can actually trust.</p>
-          <ul>
-            <li>Monthly reconciliations</li>
-            <li>Financial reporting &amp; forecasting</li>
-            <li>Data visualization</li>
-          </ul>
+        <article class="card card--expandable">
+          <h3 class="card-head">
+            <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="mono-label">03 · Analytics</span>
+              <span class="card-name">Bookkeeping &amp;<br>Data Analytics</span>
+              <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+          <div class="card-details">
+            <div class="card-details-inner">
+              <p>Clean books. Clear reports. Decisions backed by data you can actually trust.</p>
+              <ul>
+                <li>Monthly reconciliations</li>
+                <li>Financial reporting &amp; forecasting</li>
+                <li>Data visualization</li>
+              </ul>
+            </div>
+          </div>
         </article>
       </div>
     </div>
@@ -273,6 +300,24 @@
   });
   // Close on link click
   links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Expandable service cards — accordion (only one open at a time)
+  const expandables = document.querySelectorAll('.card--expandable');
+  const closeCard = (card) => {
+    card.classList.remove('open');
+    card.querySelector('.card-toggle').setAttribute('aria-expanded', 'false');
+  };
+  expandables.forEach(card => {
+    const btn = card.querySelector('.card-toggle');
+    btn.addEventListener('click', () => {
+      const wasOpen = card.classList.contains('open');
+      expandables.forEach(closeCard);          // close everything first
+      if (!wasOpen) {                          // then open this one (unless it was already open)
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
 
 <button class="font-toggle" onclick="document.body.classList.toggle('fast-font'); localStorage.setItem('fastfont', document.body.classList.contains('fast-font'))" title="Toggle reading font">Aa</button>
