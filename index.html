@@ -84,6 +84,7 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
               <span class="mono-label">01 · Operations</span>
               <span class="card-name">Operations &amp;<br>Process Design</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
@@ -104,6 +105,7 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span>
               <span class="mono-label">02 · Automation</span>
               <span class="card-name">Automation &amp;<br>Integrations</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
@@ -124,6 +126,7 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg></span>
               <span class="mono-label">03 · Analytics</span>
               <span class="card-name">Bookkeeping &amp;<br>Data Analytics</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
@@ -191,7 +194,7 @@
         <h2 style="margin-top:20px">What clients say.</h2>
       </div>
       <div class="testimonial-placeholder">
-        <div class="tp-mark">&#8220;</div>
+        <div class="tp-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
         <p class="tp-copy">Last season we had 800+ edits across three rounds. This season it was 222: 200 first round, 20 second round, 2 last round. That&#39;s a quarter of what we used to go through. We had our joint team meeting and everyone was happy and cheerful instead of the usual crabby and defensive. It&#39;s crazy the difference of how much easier this was after Nicole fixed the Excel sheet.</p>
         <div class="tp-foot">
           <span class="mono">Glenda Ollero &middot; Communications Manager, UNA</span>
@@ -305,12 +308,17 @@
   }
   @media (max-width: 767px) { .testimonial-placeholder { padding: 32px 24px; } }
   .tp-mark {
-    font-family: Georgia, serif;
-    font-size: 100px;
-    line-height: 0.7;
-    color: rgba(76,29,149,0.35);
-    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(76,29,149,0.30);
+    color: var(--purple-deep);
+    margin-bottom: 22px;
   }
+  .tp-mark svg { width: 26px; height: 26px; }
   .tp-copy {
     font-size: clamp(16px, 1.5vw, 19px);
     line-height: 1.55;
@@ -330,6 +338,25 @@
     gap: 16px;
     flex-wrap: wrap;
   }
+
+  /* Light theme for the three discipline cards (matches the security page) */
+  .card--expandable {
+    background: #FFFFFF;
+    border: 1px solid rgba(76,29,149,0.10);
+    box-shadow: 0 1px 2px rgba(33,7,73,0.04);
+  }
+  .card--expandable:hover {
+    border-color: rgba(76,29,149,0.22);
+    box-shadow: 0 12px 30px -20px rgba(33,7,73,0.25);
+  }
+  .card--expandable .mono-label { color: var(--purple-deep); }
+  .card-toggle .card-name { color: #2E1065; }
+  .card--expandable .card-details-inner p { color: #2E1065; }
+  .card--expandable .card-details-inner ul li { color: #2E1065; }
+  .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
+  /* Small Lucide icon at the top of each card (Image #3 pattern) */
+  .card-icon { display: block; line-height: 0; margin-bottom: 18px; color: var(--purple-deep); }
+  .card-icon svg { width: 26px; height: 26px; }
 </style>
 
 <script>

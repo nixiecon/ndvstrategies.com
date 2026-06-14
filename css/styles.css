@@ -139,6 +139,7 @@ a:hover { color: #3E1777; }
 }
 .btn:hover { background: #3E1777; color: #fff; transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(76,29,149,0.45); }
 .btn:active { transform: translateY(0); }
+.btn-icon { width: 17px; height: 17px; flex: none; }
 
 .btn-ghost {
   background: transparent;
