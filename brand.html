@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NDV Strategies — Brand Guide</title>
-<meta name="description" content="NDV Strategies LLC brand guide — colors, type, voice.">
+<title>NDV Strategies · Brand Guide</title>
+<meta name="description" content="NDV Strategies LLC brand guide, colors, type, voice.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="assets/ndv-strategies-favicon.svg">
 <link rel="icon" type="image/png" href="assets/ndv-strategies-favicon.png">
@@ -57,21 +57,21 @@
 <div class="wrap">
   <div class="eyebrow"><span class="node"></span> Brand Guide &middot; Internal Reference</div>
   <h1>Systems that work. <span class="fin">Finally.</span></h1>
-  <p class="lede">The working brand reference for NDV Strategies LLC. Colors and type below are the live values from <code>colors_and_type.css</code> — the source of truth for the site. Click any hex to copy.</p>
+  <p class="lede">The working brand reference for NDV Strategies LLC. Colors and type below are the live values from <code>colors_and_type.css</code>, the source of truth for the site. Click any hex to copy.</p>
 
   <h2>Colors</h2>
   <div class="grid" id="palette"></div>
 
   <h2>Typography</h2>
   <div class="type-row">
-    <div class="label">Body / Headlines — Inter</div>
+    <div class="label">Body / Headlines · Inter</div>
     <div class="sans-sample big">The quick brown fox builds the dashboard.</div>
-    <div class="sans-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">Inter · 400 / 500 / 600 / 700 — abcdefghijklmnopqrstuvwxyz 0123456789</div>
+    <div class="sans-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">Inter · 400 / 500 / 600 / 700, abcdefghijklmnopqrstuvwxyz 0123456789</div>
   </div>
   <div class="type-row">
-    <div class="label">Code / Metadata — JetBrains Mono</div>
+    <div class="label">Code / Metadata · JetBrains Mono</div>
     <div class="mono-sample big">git commit -m "ship it"</div>
-    <div class="mono-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">JetBrains Mono · 400 / 500 — 0123456789 {}[]()&lt;&gt;</div>
+    <div class="mono-sample" style="margin-top:8px;color:rgba(237,233,254,0.7)">JetBrains Mono · 400 / 500, 0123456789 {}[]()&lt;&gt;</div>
   </div>
 
   <h2>Tagline</h2>
@@ -80,12 +80,12 @@
     <div class="note">Chosen 2026-04-16. Use as the primary line; "Finally." always carries the accent color.</div>
   </div>
 
-  <h2>Voice — We Are / We Are Not</h2>
+  <h2>Voice, We Are / We Are Not</h2>
   <div class="voice" id="voice"></div>
 
   <h2>How it sounds</h2>
   <div class="quote">"You're doing five jobs. Let's fix that."</div>
-  <div class="quote">"You describe the problem. I handle the rest."</div>
+  <div class="quote">"You describe the problem. We handle the rest."</div>
   <div class="note">Direct. Leads with the client's pain, not credentials. No jargon, no "synergy," no fake cheerfulness. Never use "VA," "guru," "ninja," or "wizard."</div>
   <div class="source">Source: Projects/Updates/NDV_Brand_Voice_Guidelines.md</div>
 
@@ -112,12 +112,12 @@ document.getElementById('palette').innerHTML = PALETTE.map(c => `
   </div>`).join('');
 
 const VOICE = [
-  { we: 'Precise', not: 'not <b>vague</b> — complete, correct, no follow-up needed' },
-  { we: 'Anticipatory', not: 'not <b>reactive</b> — see the need before it’s finished being said' },
-  { we: 'Legible', not: 'not <b>performatively warm</b> — clear and real, never fake-cheerful' },
-  { we: 'Authoritative', not: 'not <b>credential-dropping</b> — lead with results, not titles' },
-  { we: 'Premium', not: 'not <b>commodity</b> — referral-first, not an Upwork listing' },
-  { we: 'Direct', not: 'not <b>jargon-heavy</b> — say the thing, no buzzword soup' },
+  { we: 'Precise', not: 'not <b>vague</b>: complete, correct, no follow-up needed' },
+  { we: 'Anticipatory', not: 'not <b>reactive</b>: see the need before it’s finished being said' },
+  { we: 'Legible', not: 'not <b>performatively warm</b>: clear and real, never fake-cheerful' },
+  { we: 'Authoritative', not: 'not <b>credential-dropping</b>: lead with results, not titles' },
+  { we: 'Premium', not: 'not <b>commodity</b>: referral-first, not an Upwork listing' },
+  { we: 'Direct', not: 'not <b>jargon-heavy</b>: say the thing, no buzzword soup' },
 ];
 document.getElementById('voice').innerHTML = VOICE.map(v => `
   <div class="vcard"><div class="we">${v.we}</div><div class="not">${v.not}</div></div>`).join('');
