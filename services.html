@@ -198,8 +198,20 @@
 <script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
 
 <style>
-  .service-row { padding: 72px 0; }
-  .service-row + .service-row { border-top: 1px solid rgba(76,29,149,0.10); padding-top: 72px; }
+  .service-row { padding: 52px 0; }
+  /* styles.css zeroes padding-top on adjacent .section blocks; restore it
+     for rows 02 & 03 so each stack gets its top spacing (white for 02,
+     lavender for the 03 band). */
+  .service-row + .service-row { padding-top: 52px; }
+  /* Match the hero's bottom gap to the 52px row rhythm (global .hero is 80px),
+     so the intro → 01 transition is even with the row-to-row gaps. */
+  .hero { padding-bottom: 52px; }
+  /* The Engagement section also loses its top padding to .section + .section;
+     restore it so there's even space above "How it works". */
+  #analytics + .section { padding-top: 52px; }
+  /* Full-bleed light-lavender band behind the alternating rows (01 & 03). */
+  #operations.service-row,
+  #analytics.service-row { background: rgba(237,233,254,0.6); }
 
   .svc-grid {
     display: grid;

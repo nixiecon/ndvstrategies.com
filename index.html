@@ -84,8 +84,8 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
               <span class="mono-label">01 · Operations</span>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
               <span class="card-name">Operations &amp;<br>Process Design</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
@@ -105,8 +105,8 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span>
               <span class="mono-label">02 · Automation</span>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span>
               <span class="card-name">Automation &amp;<br>Integrations</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
@@ -126,8 +126,8 @@
         <article class="card card--expandable">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg></span>
               <span class="mono-label">03 · Analytics</span>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg></span>
               <span class="card-name">Bookkeeping &amp;<br>Data Analytics</span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
@@ -309,16 +309,10 @@
   @media (max-width: 767px) { .testimonial-placeholder { padding: 32px 24px; } }
   .tp-mark {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(76,29,149,0.30);
     color: var(--purple-deep);
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
-  .tp-mark svg { width: 26px; height: 26px; }
+  .tp-mark svg { width: 34px; height: 34px; }
   .tp-copy {
     font-size: clamp(16px, 1.5vw, 19px);
     line-height: 1.55;
@@ -354,9 +348,12 @@
   .card--expandable .card-details-inner p { color: #2E1065; }
   .card--expandable .card-details-inner ul li { color: #2E1065; }
   .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
-  /* Small Lucide icon at the top of each card (Image #3 pattern) */
-  .card-icon { display: block; line-height: 0; margin-bottom: 18px; color: var(--purple-deep); }
-  .card-icon svg { width: 26px; height: 26px; }
+  /* Label sits top-left; icon is centered directly above the title. */
+  .card--expandable .mono-label { margin-bottom: 18px; }
+  .card-icon { display: block; text-align: center; line-height: 0; margin: 0 0 14px; color: var(--purple-deep); }
+  .card-icon svg { width: 28px; height: 28px; }
+  /* Tighten the title-to-body gap only when the card is open. */
+  .card--expandable.open .card-toggle { padding-bottom: 10px; }
 </style>
 
 <script>

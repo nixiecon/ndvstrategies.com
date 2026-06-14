@@ -222,7 +222,7 @@
   .sec-card .card-icon svg { width: 26px; height: 26px; }
   .sec-card .card-toggle .card-name {
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.3;
     color: #1E1B4B;
     /* Reserve 2 lines so every collapsed card is the same height,
@@ -231,11 +231,15 @@
   }
   /* Pull the body up tight under the title when a card is open. */
   .sec-card .card-toggle { padding-bottom: 16px; }
+  /* When open, drop the reserved 2nd title line so the body sits
+     right under a 1-line title — collapsed cards keep min-height. */
+  .sec-card.card--expandable.open .card-toggle .card-name { min-height: 0; }
+  .sec-card.card--expandable.open .card-toggle { padding-bottom: 12px; }
   .sec-card .card-details-inner { padding-top: 0; }
   .sec-card .card-details-inner ul { margin-top: 0; }
   .sec-card .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
   .sec-card .card-details-inner p,
-  .sec-card .card-details-inner ul li { color: #1E1B4B; }
+  .sec-card .card-details-inner ul li { color: #1E1B4B; font-size: 15px; }
 </style>
 <script>
   const toggle=document.querySelector('.nav-toggle');
