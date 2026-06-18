@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NS33HYLJK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9NS33HYLJK');</script>
+<title>Client Portal · NDV Strategies</title>
+<meta name="description" content="View and pay your NDV Strategies invoices, see statements, and check your account.">
+<link rel="icon" type="image/svg+xml" href="assets/ndv-strategies-favicon.svg">
+<link rel="icon" type="image/png" href="assets/ndv-strategies-favicon.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg class="circuit-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M -50 200 L 260 200 L 300 160 L 600 160 L 640 200 L 980 200"/>
+    <path d="M 980 200 L 1020 240 L 1260 240 L 1300 200 L 1500 200"/>
+    <path d="M 640 200 L 680 280 L 980 280"/>
+    <path d="M -50 620 L 220 620 L 260 580 L 560 580 L 600 620 L 1500 620"/>
+    <path d="M 380 520 L 380 440 L 560 440"/>
+    <path d="M 1080 460 L 1080 380 L 1260 380"/>
+    <path d="M 820 720 L 820 800 L 1100 800"/>
+    <path d="M 140 320 L 140 400 L 260 400"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#4C1D95" stroke-width="2">
+    <circle cx="260" cy="200" r="5"/><circle cx="600" cy="160" r="5"/>
+    <circle cx="980" cy="200" r="5"/><circle cx="1260" cy="240" r="5"/>
+    <circle cx="220" cy="620" r="5"/><circle cx="560" cy="580" r="5"/>
+    <circle cx="980" cy="280" r="5"/><circle cx="380" cy="440" r="5"/>
+    <circle cx="1080" cy="380" r="5"/><circle cx="820" cy="800" r="5"/>
+    <circle cx="140" cy="400" r="5"/>
+  </g>
+</svg>
+
+<nav class="site-nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="NDV Strategies, home">
+      <img src="assets/ndv-strategies-logo-primary-transparent.svg" alt="NDV Strategies">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="portal.html" class="active">Portal</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="shell">
+      <span class="eyebrow"><span class="node"></span> Client Portal</span>
+      <h1 style="margin-top:24px">Pay an invoice.<br><span class="fin">Check your account.</span></h1>
+      <p class="sub" style="max-width:620px">Existing clients can view invoices, pay online, and pull statements here. Pick the option that matches the currency we bill you in.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:24px">
+    <div class="shell">
+      <div class="portal-grid">
+
+        <!-- USD / Zoho -->
+        <div class="card">
+          <span class="mono-label">Invoices in USD</span>
+          <h3>View &amp; pay (USD)</h3>
+          <p>Most clients. Log in to see your invoices, pay online, and download statements.</p>
+          <a href="https://books.zohosecure.com/portal/nicoledevera"
+             target="_blank" rel="noopener"
+             class="btn" style="margin-top:24px">
+             Open USD portal <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- CAD / Stripe -->
+        <div class="card">
+          <span class="mono-label">Invoices in CAD</span>
+          <h3>View &amp; pay (CAD)</h3>
+          <p>For clients we bill in Canadian dollars. Enter your email and Stripe sends you a secure link to your invoices and payment history.</p>
+          <a href="https://billing.stripe.com/p/login/3cI6oI3Hm4Ik1Xt8nXcMM00"
+             target="_blank" rel="noopener"
+             class="btn" style="margin-top:24px">
+             Open CAD portal <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+      <p class="portal-help">
+        Not sure which one you are? <a href="mailto:contact@ndvstrategies.com">Email us</a> and we'll point you to the right link.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <span class="status"><span class="pulse"></span> © 2026 NDV Strategies LLC · Gilbert, AZ</span>
+    <a href="mailto:contact@ndvstrategies.com" style="color:#6B5E8A; border-bottom:1px solid rgba(76,29,149,0.10);">contact@ndvstrategies.com</a>
+  </div>
+</footer>
+
+<style>
+  .portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 880px;
+  }
+  @media (max-width: 767px) { .portal-grid { grid-template-columns: 1fr; } }
+
+  .portal-grid .card { display: flex; flex-direction: column; align-items: flex-start; }
+  .portal-grid .card .btn { margin-top: auto; }
+
+  .portal-help {
+    margin-top: 28px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: #6B5E8A;
+  }
+  .portal-help a { color: var(--teal); border-bottom: 1px solid transparent; transition: border-color var(--fast) var(--ease); }
+  .portal-help a:hover { border-bottom-color: var(--teal); }
+</style>
+
+<script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+<button class="font-toggle" onclick="document.body.classList.toggle('fast-font'); localStorage.setItem('fastfont', document.body.classList.contains('fast-font'))" title="Toggle reading font">Aa</button>
+</body>
+</html>
