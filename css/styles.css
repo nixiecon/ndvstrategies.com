@@ -201,7 +201,7 @@ a:hover { color: #3E1777; }
   align-items: center;
   gap: 8px;
 }
-.nav-links a.nav-portal svg { width: 19px; height: 19px; }
+.nav-links a.nav-portal svg { width: 18px; height: 18px; }
 .nav-portal-text { display: none; }
 @media (max-width: 767px) {
   .nav-portal-text { display: inline; }
