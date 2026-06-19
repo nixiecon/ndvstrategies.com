@@ -63,7 +63,7 @@
     <div class="shell">
       <span class="eyebrow"><span class="node"></span> Operations &amp; automation consulting</span>
       <h1>Systems that work.<br><span class="fin">Finally.</span></h1>
-      <p class="sub">Operations and automation consulting that buys back your time. Still downloading CSVs from your bank and manually uploading them to your accounting software? That's the kind of thing we fix.</p>
+      <p class="sub">Operations and automation consulting that buys back your time. Still rebuilding the same report by hand every Monday? That's the kind of thing we fix.</p>
       <div class="hero-ctas">
         <a class="btn" href="contact.html">Let's talk <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="services.html">See what we do</a>
@@ -71,15 +71,14 @@
     </div>
   </section>
 
-  <!-- Featured proof: Glenda / UNA -->
+  <!-- ND-first philosophy (the throughline) -->
   <section class="section">
     <div class="shell">
-      <div class="testimonial-placeholder">
-        <div class="tp-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-        <p class="tp-copy">Last season we had 800+ edits across three rounds. This season it was 222: 200 first round, 20 second round, 2 last round. That&#39;s a quarter of what we used to go through. We had our joint team meeting and everyone was happy and cheerful instead of the usual crabby and defensive. It&#39;s crazy the difference of how much easier this was after Nicole fixed the Excel sheet.</p>
-        <div class="tp-foot">
-          <span class="mono">Glenda Ollero &middot; Communications Manager, UNA</span>
-        </div>
+      <div class="philosophy">
+        <span class="eyebrow"><span class="node"></span> The throughline</span>
+        <h2>Built for the worst day, not the best one.</h2>
+        <p class="phil-lede">If a system only works when you're sharp, it's a liability waiting for a bad week. I build for the opposite: the overwhelmed Monday, the person who just inherited the file, the brain that's running on empty. Make it work <em>then</em>, and it works for everyone, always.</p>
+        <p>This isn't theory for me. I'm autistic and ADHD. I build the way I need things to actually run. Low-friction. Nothing to hold in your head. Always obvious where to pick back up. It's the curb-cut effect: build the ramp for the people who need it most, and everyone moves easier.</p>
       </div>
     </div>
   </section>
@@ -111,14 +110,15 @@
     </div>
   </section>
 
-  <!-- ND-first philosophy -->
+  <!-- Featured proof: Glenda / UNA -->
   <section class="section">
     <div class="shell">
-      <div class="philosophy">
-        <span class="eyebrow"><span class="node"></span> The throughline</span>
-        <h2>Built for the worst day, not the best one.</h2>
-        <p class="phil-lede">If a system only works when you're sharp, it's a liability waiting for a bad week. I build for the opposite: the overwhelmed Monday, the person who just inherited the file, the brain that's running on empty. Make it work <em>then</em>, and it works for everyone, always.</p>
-        <p>This isn't theory for me. I'm autistic and ADHD. I build the way I need things to actually run. Low-friction. Nothing to hold in your head. Always obvious where to pick back up. It's the curb-cut effect: build the ramp for the people who need it most, and everyone moves easier.</p>
+      <div class="testimonial-placeholder">
+        <div class="tp-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
+        <p class="tp-copy">Last season we had 800+ edits across three rounds. This season it was 222: 200 first round, 20 second round, 2 last round. That&#39;s a quarter of what we used to go through. We had our joint team meeting and everyone was happy and cheerful instead of the usual crabby and defensive. It&#39;s crazy the difference of how much easier this was after Nicole fixed the Excel sheet.</p>
+        <div class="tp-foot">
+          <span class="mono">Glenda Ollero &middot; Communications Manager, UNA</span>
+        </div>
       </div>
     </div>
   </section>
@@ -148,32 +148,29 @@
 
 <!-- Page-specific styles -->
 <style>
-  /* ── Featured testimonial ───────────────────────────── */
-  .testimonial-placeholder {
-    padding: 48px;
-    background: #FAF8FF;
-    border: 1px dashed rgba(76,29,149,0.22);
+  /* ── ND-first philosophy band ───────────────────────── */
+  .philosophy {
+    padding: clamp(36px, 5vw, 64px);
     border-radius: var(--r-xl);
-    position: relative;
+    background:
+      radial-gradient(130% 110% at 18% 0%, rgba(76,29,149,0.55), transparent 56%),
+      radial-gradient(120% 120% at 100% 100%, rgba(115,44,130,0.42), transparent 55%),
+      #0E0A1F;
+    border: 1px solid rgba(167,139,250,0.22);
+    box-shadow: 0 24px 60px -32px rgba(14,10,31,0.9);
   }
-  @media (max-width: 767px) { .testimonial-placeholder { padding: 32px 24px; } }
-  .tp-mark { display: inline-flex; color: var(--purple-deep); margin-bottom: 18px; }
-  .tp-mark svg { width: 34px; height: 34px; }
-  .tp-copy {
-    font-size: clamp(17px, 1.7vw, 21px);
-    line-height: 1.55;
-    color: #1E1B4B;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.005em;
-    margin-bottom: 14px;
+  .philosophy .eyebrow { color: var(--purple-light); }
+  .philosophy h2 { color: #FFFFFF; margin: 18px 0 0; max-width: 20ch; }
+  .philosophy p { color: rgba(237,233,254,0.82); max-width: 660px; font-size: 16px; line-height: 1.6; }
+  .philosophy .phil-lede {
+    font-size: clamp(19px, 1.9vw, 23px);
+    line-height: 1.45;
+    color: #EDE9FE;
+    font-weight: 500;
+    margin-top: 22px;
   }
-  .tp-foot {
-    margin-top: 28px; padding-top: 20px;
-    border-top: 1px solid rgba(76,29,149,0.10);
-    display: flex; justify-content: space-between;
-    gap: 16px; flex-wrap: wrap;
-  }
+  .philosophy p + p { margin-top: 16px; }
+  .philosophy em { font-style: italic; color: #FFFFFF; }
 
   /* ── Trust / Why NDV layout ─────────────────────────── */
   .trust {
@@ -207,29 +204,32 @@
   .trust-points p { font-size: 15px; color: #1E1B4B; }
   @media (max-width: 640px) { .trust-points li { grid-template-columns: 1fr; gap: 8px; } }
 
-  /* ── ND-first philosophy band ───────────────────────── */
-  .philosophy {
-    padding: clamp(36px, 5vw, 64px);
+  /* ── Featured testimonial ───────────────────────────── */
+  .testimonial-placeholder {
+    padding: 48px;
+    background: #FAF8FF;
+    border: 1px dashed rgba(76,29,149,0.22);
     border-radius: var(--r-xl);
-    background:
-      radial-gradient(130% 110% at 18% 0%, rgba(76,29,149,0.55), transparent 56%),
-      radial-gradient(120% 120% at 100% 100%, rgba(115,44,130,0.42), transparent 55%),
-      #0E0A1F;
-    border: 1px solid rgba(167,139,250,0.22);
-    box-shadow: 0 24px 60px -32px rgba(14,10,31,0.9);
+    position: relative;
   }
-  .philosophy .eyebrow { color: var(--purple-light); }
-  .philosophy h2 { color: #FFFFFF; margin: 18px 0 0; max-width: 20ch; }
-  .philosophy p { color: rgba(237,233,254,0.82); max-width: 660px; font-size: 16px; line-height: 1.6; }
-  .philosophy .phil-lede {
-    font-size: clamp(19px, 1.9vw, 23px);
-    line-height: 1.45;
-    color: #EDE9FE;
-    font-weight: 500;
-    margin-top: 22px;
+  @media (max-width: 767px) { .testimonial-placeholder { padding: 32px 24px; } }
+  .tp-mark { display: inline-flex; color: var(--purple-deep); margin-bottom: 18px; }
+  .tp-mark svg { width: 34px; height: 34px; }
+  .tp-copy {
+    font-size: clamp(17px, 1.7vw, 21px);
+    line-height: 1.55;
+    color: #1E1B4B;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.005em;
+    margin-bottom: 14px;
   }
-  .philosophy p + p { margin-top: 16px; }
-  .philosophy em { font-style: italic; color: #FFFFFF; }
+  .tp-foot {
+    margin-top: 28px; padding-top: 20px;
+    border-top: 1px solid rgba(76,29,149,0.10);
+    display: flex; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
 </style>
 
 <script>
