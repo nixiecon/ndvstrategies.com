@@ -420,8 +420,9 @@
 
   /* ── 01/02/03 service cards: collapse to number + title + subtitle ── */
   .svc-accordion .mono-label { margin-bottom: 10px; }
-  /* No reserved 2-line title height — the subtitle handles even sizing. */
-  .svc-accordion .card-toggle .card-name { min-height: 0; font-size: 21px; }
+  /* Reserve 2 lines for both the title and subtitle so all three collapsed
+     cards are the same height no matter how the text wraps. */
+  .svc-accordion .card-toggle .card-name { min-height: 2.6em; font-size: 21px; }
   .svc-accordion .svc-subtitle {
     display: block;
     margin-top: 8px;
@@ -429,6 +430,7 @@
     line-height: 1.45;
     color: #6B5E8A;
     font-weight: 400;
+    min-height: 2.9em;
   }
   .svc-accordion .card-toggle { padding-bottom: 24px; }
   .svc-accordion.card--expandable.open .card-toggle,
