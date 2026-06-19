@@ -126,9 +126,8 @@
           <span class="eyebrow"><span class="node"></span> How I work</span>
           <h2 style="margin-top:20px">You describe the problem. I handle the rest.</h2>
           <blockquote class="how-quote">
-            <span class="how-quote-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
             <p>&ldquo;Having Nicole on the team was like having a fairy godmother. All we had to do was tell her what we needed, and she&rsquo;d wave a magic wand and it was done.&rdquo;</p>
-            <div class="how-quote-foot"><span class="mono">Dr. Adelaida V. Severson &middot; President &amp; CEO, Bushtex, Inc.</span></div>
+            <div class="how-quote-foot"><span class="mono">Dr. Adelaida V. Severson<br>President &amp; CEO, Bushtex, Inc.</span></div>
           </blockquote>
         </div>
         <div class="how-principles stack-sm">
@@ -181,29 +180,47 @@
 <script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
 
 <style>
-  /* Testimonial card in the "How I work" left column (matches front-page card) */
+  /* Testimonial in the "How I work" left column — teal bar, centered to fill the column */
+  .how-grid { align-items: stretch; }
+  .how-lede { display: flex; flex-direction: column; }
+  .how-lede > .eyebrow { align-self: flex-start; }
   .how-lede .how-quote {
-    margin: 24px 0 0;
-    padding: 32px;
-    background: #FAF8FF;
-    border: 1px dashed rgba(76,29,149,0.22);
+    position: relative;
+    margin: auto 0;
+    max-width: 340px;
+    padding: 32px 32px 32px 44px;
+    background:
+      radial-gradient(130% 110% at 18% 0%, rgba(76,29,149,0.55), transparent 56%),
+      radial-gradient(120% 120% at 100% 100%, rgba(115,44,130,0.42), transparent 55%),
+      #0E0A1F;
+    border: 1px dashed rgba(167,139,250,0.30);
     border-radius: var(--r-xl);
+    box-shadow: 0 24px 60px -32px rgba(14,10,31,0.9);
   }
-  .how-quote .how-quote-mark { display: inline-flex; color: var(--purple-deep); margin-bottom: 12px; }
-  .how-quote .how-quote-mark svg { width: 30px; height: 30px; }
+  .how-quote::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 32px;
+    bottom: 32px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--teal);
+  }
   .how-quote p {
     font-size: clamp(17px, 1.7vw, 20px) !important;
     line-height: 1.5;
     font-style: italic;
-    color: #1E1B4B;
+    color: #EDE9FE;
     font-weight: 400;
     margin: 0 !important;
-    max-width: 480px;
+    max-width: none;
   }
+  .how-quote .mono { color: rgba(237,233,254,0.72); line-height: 1.7; }
   .how-quote-foot {
     margin-top: 24px;
     padding-top: 18px;
-    border-top: 1px solid rgba(76,29,149,0.10);
+    border-top: 1px solid rgba(167,139,250,0.20);
   }
 
   /* In-line accent line in the story (subtle highlight) */
@@ -365,7 +382,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
-    align-items: start;
+    align-items: stretch;
   }
   @media (max-width: 1023px) { .how-grid { grid-template-columns: 1fr; gap: 40px; } }
   .how-lede p { margin-top: 16px; font-size: 17px; max-width: 480px; }
