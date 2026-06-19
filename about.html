@@ -128,7 +128,7 @@
           <blockquote class="how-quote">
             <span class="how-quote-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
             <p>&ldquo;Having Nicole on the team was like having a fairy godmother. All we had to do was tell her what we needed, and she&rsquo;d wave a magic wand and it was done.&rdquo;</p>
-            <cite>Dr. Adelaida V. Severson &middot; President &amp; CEO, Bushtex, Inc.</cite>
+            <div class="how-quote-foot"><span class="mono">Dr. Adelaida V. Severson &middot; President &amp; CEO, Bushtex, Inc.</span></div>
           </blockquote>
         </div>
         <div class="how-principles stack-sm">
@@ -181,31 +181,29 @@
 <script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
 
 <style>
-  /* Testimonial quote in the "How I work" left column */
+  /* Testimonial card in the "How I work" left column (matches front-page card) */
   .how-lede .how-quote {
     margin: 24px 0 0;
-    padding: 0;
-    border: 0;
+    padding: 32px;
+    background: #FAF8FF;
+    border: 1px dashed rgba(76,29,149,0.22);
+    border-radius: var(--r-xl);
   }
   .how-quote .how-quote-mark { display: inline-flex; color: var(--purple-deep); margin-bottom: 12px; }
   .how-quote .how-quote-mark svg { width: 30px; height: 30px; }
   .how-quote p {
-    font-size: clamp(18px, 1.8vw, 22px) !important;
+    font-size: clamp(17px, 1.7vw, 20px) !important;
     line-height: 1.5;
     font-style: italic;
     color: #1E1B4B;
     font-weight: 400;
-    margin: 0 0 16px !important;
+    margin: 0 !important;
     max-width: 480px;
   }
-  .how-quote cite {
-    font-family: var(--font-mono);
-    font-style: normal;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
+  .how-quote-foot {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(76,29,149,0.10);
   }
 
   /* In-line accent line in the story (subtle highlight) */
