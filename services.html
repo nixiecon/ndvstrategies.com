@@ -495,20 +495,24 @@
   .svc-body .card-toggle {
     display: flex; align-items: center; justify-content: space-between;
     gap: 20px; width: 100%; text-align: left;
-    padding: 6px 0; background: none; border: 0; cursor: pointer;
+    padding: 0; background: none; border: 0; cursor: pointer;
   }
-  .svc-body .svc-head-text { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
-  .svc-body h2 { margin: 0; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.015em; }
-  .svc-body .svc-subtitle { font-size: 15px; font-weight: 400; color: #6B5E8A; line-height: 1.45; }
+  .svc-body .svc-head-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  /* Pull the title up so its cap aligns with the top of the big number. */
+  .svc-body h2 { margin: -10px 0 0; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.015em; }
+  /* Green line on the subtitle, tucked under the title. */
+  .svc-body .svc-subtitle {
+    font-size: 15px; font-weight: 400; color: #6B5E8A; line-height: 1.45;
+    border-left: 2px solid var(--teal); padding-left: 12px;
+  }
   .svc-body .card-chevron-wrap { position: static; flex: none; line-height: 0; }
   .svc-body .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
   .service-row .card-details-inner { padding: 22px 0 4px; }
 
-  /* Green bar lives on the quote (the "subtitle"), not the title. */
+  /* Quote is the lead line of the expanded panel; green bar now lives on the header subtitle. */
   .service-row .svc-quote {
     font-size: clamp(19px, 1.7vw, 24px); line-height: 1.4;
     color: #1E1B4B; font-weight: 500; letter-spacing: -0.015em;
-    padding-left: 20px; border-left: 2px solid var(--teal);
     margin: 0 0 24px; max-width: 640px;
   }
   .service-row .svc-intro { font-size: 16px; line-height: 1.6; color: #1E1B4B; margin: 0 0 32px; max-width: 640px; }
