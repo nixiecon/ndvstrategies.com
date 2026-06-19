@@ -64,23 +64,26 @@
     </div>
   </section>
 
-  <!-- 01 / 02 / 03 accordion -->
+  <!-- 01 / 02 / 03 collapsible stripes -->
   <section class="section">
     <div class="shell">
-      <div class="grid-3 grid-3--expandable stack-grid svc-accordion">
+      <div class="svc-stripes">
 
-        <article class="card card--expandable sec-card">
+        <article class="card--expandable svc-stripe">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="mono-label">01 · Operations</span>
-              <span class="card-name">Operations &amp; Process Design</span>
-              <span class="svc-subtitle">Untangle the workflows nobody wrote down.</span>
+              <span class="svc-num">01</span>
+              <span class="svc-stripe-text">
+                <span class="mono">Operations</span>
+                <span class="svc-stripe-title">Operations &amp; Process Design</span>
+                <span class="svc-stripe-sub">Untangle the workflows nobody wrote down.</span>
+              </span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
           </h3>
           <div class="card-details">
             <div class="card-details-inner">
-              <ul>
+              <ul class="svc-list">
                 <li><strong>Workflow design</strong>: mapping the work that's happening, and the work that should be</li>
                 <li><strong>SOP documentation</strong>: writing down what lives in people's heads before they leave</li>
                 <li><strong>Process audits</strong>: finding the bottleneck nobody's named yet</li>
@@ -90,18 +93,21 @@
           </div>
         </article>
 
-        <article class="card card--expandable sec-card">
+        <article class="card--expandable svc-stripe">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="mono-label">02 · Automation</span>
-              <span class="card-name">Automation &amp; Integrations</span>
-              <span class="svc-subtitle">Connect the tools you already pay for.</span>
+              <span class="svc-num">02</span>
+              <span class="svc-stripe-text">
+                <span class="mono">Automation</span>
+                <span class="svc-stripe-title">Automation &amp; Integrations</span>
+                <span class="svc-stripe-sub">Connect the tools you already pay for.</span>
+              </span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
           </h3>
           <div class="card-details">
             <div class="card-details-inner">
-              <ul>
+              <ul class="svc-list">
                 <li><strong>Tool integration</strong>: Zapier, Power Automate, native APIs</li>
                 <li><strong>Dashboard builds</strong>: one screen for the thing you're always asking about</li>
                 <li><strong>Report automation</strong>: the weekly PDF, generated on its own</li>
@@ -111,18 +117,21 @@
           </div>
         </article>
 
-        <article class="card card--expandable sec-card">
+        <article class="card--expandable svc-stripe">
           <h3 class="card-head">
             <button type="button" class="card-toggle" aria-expanded="false">
-              <span class="mono-label">03 · Analytics</span>
-              <span class="card-name">Bookkeeping &amp; Data Analytics</span>
-              <span class="svc-subtitle">Clean books, clear reports, real decisions.</span>
+              <span class="svc-num">03</span>
+              <span class="svc-stripe-text">
+                <span class="mono">Analytics</span>
+                <span class="svc-stripe-title">Bookkeeping &amp; Data Analytics</span>
+                <span class="svc-stripe-sub">Clean books, clear reports, real decisions.</span>
+              </span>
               <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
             </button>
           </h3>
           <div class="card-details">
             <div class="card-details-inner">
-              <ul>
+              <ul class="svc-list">
                 <li><strong>Monthly reconciliations</strong>: the books, kept current</li>
                 <li><strong>Financial reporting</strong>: statements and summaries the board can read</li>
                 <li><strong>Budget forecasting</strong>: the numbers that tell you what to do next</li>
@@ -418,23 +427,66 @@
   .sec-card .card-details-inner p,
   .sec-card .card-details-inner ul li { color: #1E1B4B; font-size: 15px; }
 
-  /* ── 01/02/03 service cards: collapse to number + title + subtitle ── */
-  .svc-accordion .mono-label { margin-bottom: 10px; }
-  /* Reserve 2 lines for both the title and subtitle so all three collapsed
-     cards are the same height no matter how the text wraps. */
-  .svc-accordion .card-toggle .card-name { min-height: 2.6em; font-size: 21px; }
-  .svc-accordion .svc-subtitle {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #6B5E8A;
-    font-weight: 400;
-    min-height: 2.9em;
+  /* ── 01/02/03 collapsible stripes (full-width rows, big numbers) ── */
+  .svc-stripe.card--expandable {
+    background: #FFFFFF;
+    border: 1px solid rgba(76,29,149,0.10);
+    border-radius: var(--r-lg);
+    box-shadow: 0 1px 2px rgba(33,7,73,0.04);
   }
-  .svc-accordion .card-toggle { padding-bottom: 24px; }
-  .svc-accordion.card--expandable.open .card-toggle,
-  .svc-accordion .card--expandable.open .card-toggle { padding-bottom: 12px; }
+  .svc-stripe + .svc-stripe { margin-top: 16px; }
+  /* Alternating lavender band on stripes 01 & 03. */
+  .svc-stripe.card--expandable:nth-of-type(odd) { background: rgba(237,233,254,0.55); }
+  .svc-stripe.card--expandable:hover {
+    border-color: rgba(76,29,149,0.22);
+    transform: none;
+    box-shadow: 0 8px 26px -18px rgba(33,7,73,0.25);
+  }
+  .svc-stripe .card-toggle {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 32px);
+    width: 100%;
+    text-align: left;
+    padding: clamp(22px, 3vw, 30px) clamp(22px, 3vw, 36px);
+  }
+  .svc-stripe .svc-num {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 500;
+    line-height: 0.9;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--purple-deep);
+    letter-spacing: -0.02em;
+  }
+  .svc-stripe .svc-stripe-text { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .svc-stripe .svc-stripe-text .mono { color: var(--teal); }
+  .svc-stripe .svc-stripe-title {
+    font-size: clamp(21px, 2.4vw, 30px);
+    font-weight: 700;
+    color: #1E1B4B;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+  .svc-stripe .svc-stripe-sub { font-size: 15px; color: #6B5E8A; line-height: 1.45; }
+  /* Chevron inline at the end of the row (override the absolute card default). */
+  .svc-stripe .card-chevron-wrap { position: static; flex: none; line-height: 0; }
+  .svc-stripe .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
+  /* Expanded bullets, indented under the title on desktop. */
+  .svc-stripe .card-details-inner { padding: 2px clamp(22px, 3vw, 36px) clamp(24px, 3vw, 30px); }
+  @media (min-width: 768px) { .svc-stripe .card-details-inner { padding-left: 116px; } }
+  .svc-stripe .svc-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; max-width: 760px; }
+  .svc-stripe .svc-list li {
+    font-size: 15px; color: #1E1B4B;
+    padding-left: 22px; position: relative; line-height: 1.55;
+  }
+  .svc-stripe .svc-list li::before {
+    content: ''; position: absolute; left: 0; top: 9px;
+    width: 7px; height: 7px; border-radius: 999px;
+    border: 1.5px solid var(--teal); background: transparent;
+  }
+  .svc-stripe .svc-list strong { color: #1E1B4B; font-weight: 600; }
 
   /* ── Engagement steps ───────────────────────────────── */
   .steps {
