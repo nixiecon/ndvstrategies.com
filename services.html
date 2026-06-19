@@ -76,13 +76,12 @@
         <button type="button" class="card-toggle" aria-expanded="false">
           <span class="svc-head-text">
             <h2>Operations &amp; Process Design</h2>
-            <span class="svc-subtitle">Untangle the workflows nobody wrote down.</span>
+            <span class="svc-subtitle">"Your team is doing three jobs each and nothing has a system. We fix that."</span>
           </span>
           <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
         </button>
         <div class="card-details">
           <div class="card-details-inner">
-            <p class="svc-quote">"Your team is doing three jobs each and nothing has a system. We fix that."</p>
             <p class="svc-intro">The work organizations delay the longest because it's hard to point at. It's also the work that makes everything else easier once it's done.</p>
             <div class="svc-list-wrap">
               <span class="mono-label">Includes</span>
@@ -110,13 +109,12 @@
         <button type="button" class="card-toggle" aria-expanded="false">
           <span class="svc-head-text">
             <h2>Automation &amp; Integrations</h2>
-            <span class="svc-subtitle">Connect the tools you already pay for.</span>
+            <span class="svc-subtitle">"If you're doing it manually every week, it should be automated."</span>
           </span>
           <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
         </button>
         <div class="card-details">
           <div class="card-details-inner">
-            <p class="svc-quote">"If you're doing it manually every week, it should be automated."</p>
             <p class="svc-intro">You already have the tools. They just don't talk to each other. The work is in the connecting.</p>
             <div class="svc-list-wrap">
               <span class="mono-label">Includes</span>
@@ -144,13 +142,12 @@
         <button type="button" class="card-toggle" aria-expanded="false">
           <span class="svc-head-text">
             <h2>Bookkeeping &amp; Data Analytics</h2>
-            <span class="svc-subtitle">Clean books, clear reports, real decisions.</span>
+            <span class="svc-subtitle">"Clean books. Clear reports. Decisions backed by actual data."</span>
           </span>
           <span class="card-chevron-wrap"><span class="card-chevron" aria-hidden="true"></span></span>
         </button>
         <div class="card-details">
           <div class="card-details-inner">
-            <p class="svc-quote">"Clean books. Clear reports. Decisions backed by actual data."</p>
             <p class="svc-intro">The financial and operational visibility the board keeps asking for, built once, maintained monthly.</p>
             <div class="svc-list-wrap">
               <span class="mono-label">Includes</span>
@@ -500,10 +497,10 @@
   .svc-body .svc-head-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
   /* Pull the title up so its cap aligns with the top of the big number. */
   .svc-body h2 { margin: -10px 0 0; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.015em; }
-  /* Green line on the subtitle, tucked under the title. */
+  /* Quote sits under the title with the green line (this is the "subtitle"). */
   .svc-body .svc-subtitle {
-    font-size: 15px; font-weight: 400; color: #6B5E8A; line-height: 1.45;
-    border-left: 2px solid var(--teal); padding-left: 12px;
+    font-size: clamp(15px, 1.3vw, 17px); font-weight: 400; color: #4A4462; line-height: 1.5;
+    border-left: 2px solid var(--teal); padding-left: 14px; max-width: 640px;
   }
   .svc-body .card-chevron-wrap { position: static; flex: none; line-height: 0; }
   .svc-body .card-chevron { border-right-color: var(--purple-deep); border-bottom-color: var(--purple-deep); }
