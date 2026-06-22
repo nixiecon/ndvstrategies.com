@@ -353,13 +353,12 @@
           <h2>Calendar Redesign</h2>
           <p class="case-client"><a href="https://www.myuna.ca" target="_blank" rel="noopener">University Neighbourhoods Association (UNA)</a></p>
           <p class="case-sub">The UNA manages local infrastructure, parking, and community spaces for the residential areas surrounding UBC, while providing residents with recreational access, community services, and opportunities for community engagement. It also runs flexible drop-in programs that let participants join individual sessions as space allows and pay only for the classes they attend, without committing to a full series.</p>
-          <p class="case-status"><span class="case-dot"></span> Live since June 2026</p>
         </header>
 
         <div class="case-block">
           <span class="eyebrow"><span class="node"></span> The drop-in calendar</span>
           <h3>Can you make our calendar more readable?</h3>
-          <p class="case-intro">The times were misaligned, the headers had no dates, the filters were hard to use. Among other things.<br>Here&rsquo;s what we turned it into:</p>
+          <p class="case-intro">The times were misaligned, the headers had no dates, the filters were hard to use.<br>Among other things. Here&rsquo;s what we turned it into:</p>
 
           <div class="ba-grid">
             <figure class="ba-card ba-before">
@@ -371,6 +370,7 @@
             <figure class="ba-card ba-after">
               <div class="ba-shot">
                 <span class="ba-tag">After</span>
+                <span class="ba-live"><span class="case-dot"></span> Live since June 2026</span>
                 <img src="assets/una-dropin-after.png" alt="UNA drop-in schedule after the redesign: clean green branded weekly calendar with working filters" loading="lazy">
               </div>
             </figure>
@@ -611,6 +611,16 @@
   }
   @media (max-width: 720px) { .ba-grid { grid-template-columns: 1fr; } }
   .ba-card { margin: 0; }
+  .ba-live {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 12px; letter-spacing: 0.04em;
+    padding: 7px 13px; border-radius: 999px;
+    color: #fff; background: rgba(14,10,31,0.78);
+    backdrop-filter: blur(2px);
+  }
+  .ba-live .case-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(94,234,212,0.22); }
   .ba-shot {
     aspect-ratio: 16 / 10;
     border-radius: var(--r-lg);
