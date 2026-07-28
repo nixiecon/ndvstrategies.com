@@ -132,7 +132,6 @@
   .portal-help a:hover { border-bottom-color: var(--teal); }
 </style>
 
-<script>if (localStorage.getItem('fastfont') === 'true') document.body.classList.add('fast-font');</script>
 <script>
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
@@ -143,6 +142,5 @@
   links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
 
-<button class="font-toggle" onclick="document.body.classList.toggle('fast-font'); localStorage.setItem('fastfont', document.body.classList.contains('fast-font'))" title="Toggle reading font">Aa</button>
 </body>
 </html>

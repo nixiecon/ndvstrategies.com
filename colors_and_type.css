@@ -1,8 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Type is SELF-HOSTED from /fonts, not pulled from a third-party CDN, so the
+   site renders in the intended faces even if Google Fonts or Fontshare is
+   blocked, slow, or down. Weights match what the site actually uses: 400/500/
+   600/700 sans, 400/500 mono. font-display:swap so text is never invisible
+   while a face loads. */
+
+/* General Sans, Fontshare, ITF Free Font License */
+@font-face {
+  font-family: 'General Sans';
+  src: url('fonts/general-sans-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('fonts/general-sans-500-normal.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('fonts/general-sans-600-normal.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('fonts/general-sans-700-normal.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* Victor Mono, SIL Open Font License 1.1 */
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('fonts/victor-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('fonts/victor-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
 
 :root {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'General Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Victor Mono', ui-monospace, 'Fira Code', monospace;
 
   /* Brand */
   --purple-deep:  #4C1D95;
